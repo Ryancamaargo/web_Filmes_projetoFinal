@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" th:fragment="navbar">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <ul class="navbar-nav mr-auto mt-2 align-items-center">
+            <li class="content-logo">
+                <a class="nav-link mt-1" th:href="@{/index.html}">
+                <img th:src="@{/logo/logo.png}" class=" logo" alt="Logo"/></a></li>
+            <li>
+                <a ><i class="fa fa-user my-2 my-sm-0 text-center" th:href="@{/login}">Login/</i>
+                </a></li>
+            <li><a ><i class="fa fa-address-card my-2 my-sm-0" th:href="@{/meucadastro}">Meu cadastro</i></a></li>
+            <li><a><i class="fa fa-user-plus my-2 my-sm-0" th:href="@{/cadastro}"></i>Cadastrar-se </a> </li>
+
+        </ul>
+        <form class="form-inline buscar">
+            <form class="form-inline">
+
+                <input class="form-control mr-sm-2" type="search" placeholder="Consultar..."
+                       aria-label="Search">
+                <button class="btn btn-outline-info my-2 my-sm-0" type="submit"><i
+                        class="fa fa-search"></i></button>
+            </form>
+
+            <form class="form-inline">
+
+                <a href="carrinho.html"><i class="fa fa-shopping-cart my-2 my-sm-0 " style="padding:10px"></i>
+
+                </a>
+
+            </form>
+
+            <li class="form-inline nav-item text-center " style="margin-left: 25px; font-size: 15px;">
+                Bem vindo(a), <span id="nomeusuariologado">Logar-se</span>
+            </li>
+
+        </form>
+    </div>
+
+
+</nav>
+</html>
