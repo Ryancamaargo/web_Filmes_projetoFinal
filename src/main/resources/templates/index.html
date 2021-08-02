@@ -73,13 +73,12 @@
                             <li><a class="dropdown-item" id="todos">Todos</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" id="filmes" href="/filmes">Filmes</a></li>
-                            <li><a class="dropdown-item" id="filmes" th:href="@{/filmes}">Filmes</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" id="series">Séries</a></li>
+                            <li><a class="dropdown-item" id="series" th:href="@{/series}">Séries</a></li>
                         </ul>
                     </div>
 
-                    <div class="dropdown float-left">
+                    <!--<div class="dropdown float-left">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             Ordenar por
                         </button>
@@ -89,34 +88,37 @@
                             <li><a class="dropdown-item" href="#">Preço menor para maior</a></li>
 
                         </ul>
-                    </div>
+                    </div>-->
                 </div>
 
-                <div class="row p-5 m-0">
+                <div class="row p-5 m-0 align-items-center">
 
                     <div th:each="item : ${itens}" class="col-lg-6  col-xl-3  mb-4 mb-sm-4 mb-xl-0 d-flex align-items-stretch produtos">
-                        <div id="card1" class="card my-card">
-                            <div class="card-header my-card-header">
-                                <h3 id="titulo1" class="text-center text-info card-title title-categoria produtos-titulo" th:text="${item.nome}"></h3>
-                            </div>
+                        <div id="card1" class="card my-card produtos">
+                            <ul>
+                                <li>
+                                    <h3 id="titulo" class="text-center text-info card-title title-categoria produtos-titulo" th:text="${item.nome}"></h3>
+                                    <a th:href="@{/item/{id}(id=${item.id})}">
+                                        <img id="img"
+                                             th:src="@{|/images/${item.categoria.nome}/${item.imagem}.jpg|}"
+                                             class="card-img-top img-thumbnail my-img produtos-imagem"
+                                             th:alt="${item.nome}"
+                                        />
+                                    </a>
+                                    <div class="card-body">
+                                        <p id="descricao1" class="card-text text-justify mt-1 produtos-descricao" th:text="${item.descricao}"></p>
+                                        <p class="card-title pricing-card-title">De R$<s th:text="${item.preco}"> </s>
+                                        <p> por apenas R$ <small id="preco" class="produtos-preco" th:text="${item.preco_promocao}">           </small></p>
 
-                            <div class="card-body">
-                                <a href="paginaInternaProduto1.html">
-                                    <img id="img1"
-                                         th:src="@{|/images/${item.categoria.nome}/${item.imagem}.jpg|}"
-                                         class="card-img-top img-thumbnail my-img produtos-img"
-                                         th:alt="${item.nome}"
-                                    />
-                                </a>
-                                <p id="descricao1" class="card-text text-justify mt-1 produtos-descricao" th:text="${item.descricao}"></p>
-                                <p class="preco-antigo"> De R$<s th:text="${item.preco}"></s> por R$ <u><strong id="preco1" class="preco" th:text="${item.preco_promocao}"></strong></u></p>
-                            </div>
-                            <div class="card-footer">
-                                <button class="btAdicionar btn btn-success" style="width:  70%; padding: 5px;"><i
-                                        class="fa fa-cart-plus"></i></button>
-                            </div>
+
+
+                                        <a  th:href="@{/itensInterno/{id}(id=${item.id})}"><button class="btVermais btn btn-success"  style="width:  70%; padding: 5px;"><i class="fa fa-low-vision" th:href="@{/itensInterno/{id}(id=${item.id})}"></i>Ver mais</button></a>
+                                    </div>
+
+                                </li>
+
+                            </ul>
                         </div>
-                    </div>
                 </div>
             </div>
 
@@ -124,11 +126,10 @@
 
                 <h1 class="display-3">Obrigado por nos visitar!</h1>
                 <h2>Tem muito mais esperando por você.</h2>
-                A Ryanflix tem um grande catálogo de filmes, documentários, séries, originais, premiados e muito
-                mais. Assista o quanto quiser, quando quiser.
+                A Ryanflix tem um grande catálogo de filmes, séries. Assista o quanto quiser, quando quiser.
                 <p class="lead">Escolha os melhores filmes da atualidade.</p>
                 <div class="text-center marca">
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Compre conosco</a>
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Veja os produtos</a>
                 </div>
 
 

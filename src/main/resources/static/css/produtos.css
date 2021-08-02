@@ -1,25 +1,26 @@
 
-.imagem-produto {
-    width: 150px;
-    height: 100px;
+.produtos-imagem{
+    width: 300px;
+    height: 300px;
     margin: 10px;
 }
 
-.nome-produto {
+
+.produtos-titulo {
     color: blue;
+    font-family: Impact, fantasy;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
     font-size: 30px;
 }
 
-.preco-produto {
-    color: black;
-    margin-left: 100px;
-    font-size: 40px;
+.produtos-preco {
+
+    margin-left: 60px;
+    font-size: 30px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.produto {
-    max-width: 400px;
-}
 
 
 .corFundoProduto {
@@ -51,13 +52,6 @@
     border-color: lightskyblue;
 }
 
-.produtos-titulo {
-    color: blue;
-    font-family: Impact, fantasy;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: white;
-    font-size: 30px;
-}
 
 .produtos li:hover h3 {
     font-size: 30px;
@@ -68,7 +62,7 @@
 }
 
 .produtos-descricao {
-    font-size: 20px;
+    font-size: 10px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', fantasy;
 }
 

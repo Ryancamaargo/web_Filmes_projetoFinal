@@ -28,11 +28,11 @@ public class IndexController {
 		return "index";
 	}
 
-//	@GetMapping("/series")
-//	public String series(Model model) {
-//		model.addAttribute("itens", itemRepository.findByCategoria(CategoriaItemEnum.ANEIS));
-//		return "index";
-//	}
+	@GetMapping("/series")
+	public String series(Model model) {
+		model.addAttribute("itens", itemRepository.findByCategoriaNome("series"));
+		return "index";
+	}
 
 	@GetMapping(value = {"teste", "teste2"})
 	public String teste() {

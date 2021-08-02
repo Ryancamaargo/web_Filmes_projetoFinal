@@ -13,12 +13,22 @@
         <ul class="navbar-nav mr-auto mt-2 align-items-center">
             <li class="content-logo">
                 <a class="nav-link mt-1" th:href="@{/index.html}">
-                <img th:src="@{/logo/logo.png}" class=" logo" alt="Logo"/></a></li>
+                <img th:src="@{/images/logo.png}" class="logo" alt="Logo"/></a></li>
             <li>
-                <a ><i class="fa fa-user my-2 my-sm-0 text-center" th:href="@{/login}">Login/</i>
-                </a></li>
-            <li><a ><i class="fa fa-address-card my-2 my-sm-0" th:href="@{/meucadastro}">Meu cadastro</i></a></li>
-            <li><a><i class="fa fa-user-plus my-2 my-sm-0" th:href="@{/cadastro}"></i>Cadastrar-se </a> </li>
+                <a th:href="@{/login}"><i class="fa fa-user my-2 my-sm-0 text-center"></i>
+                    Login/
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/meucadastro}"><i class="fa fa-address-card my-2 my-sm-0"></i>
+                Meu cadastro
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/cadastrar_se}"><i class="fa fa-user-plus my-2 my-sm-0"></i>
+                Cadastrar-se
+                 </a>
+            </li>
 
         </ul>
         <form class="form-inline buscar">
