@@ -25,27 +25,20 @@
 	<div class="wrapper fadeInDown">
 		<div id="formContent">
 			<div class="fadeIn first">
-				<img alt="RyanFlix" th:src="@{/images/logo.png}" />
+				<img alt="RyanFlix" th:src="@{/images/logo.png}"/>
 			</div>
 
-					<form th:action="@{/login}" method="POST">
-
-						<input type="text" id="username" class="fadeIn second" name="username" placeholder="usuário">
-
-						<input type="password" id="password" class="fadeIn third" name="password" placeholder="senha">
-
-						<input type="submit" class="fadeIn fourth" value="Entrar">
-
-						<div class="alert alert-danger" th:if="${#bools.isTrue(param.error)}">
-							O usuário e/ou senha inválido(s)!
-						</div>
+					<form th:id="reset" th:action="@{/reset}" method="POST">
+						<label for="email">Informe o e-mail</label>
+						<input type="email" id="email" class="fadeIn second" name="email" placeholder="email">
+						<button onclick="resetPass()"
+						>Enviar</button>
 					</form>
-			<p>Não tem login? <a th:href="@{/cadastrarse}"> Cadastre-se</a></p>
+
 
 			<div id="formFooter">
-				<a class="underlineHover" th:href="@{/reset}">Esqueceu a senha?</a>
+				<a class="underlineHover" href="#">Esqueceu a senha?</a>
 			</div>
-
 
 		</div>
 	</div>
@@ -55,5 +48,6 @@
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" th:src="@{/js/senha.js}"></script>
 </body>
 </html>

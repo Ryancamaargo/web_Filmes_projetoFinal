@@ -1,6 +1,7 @@
 package utfpr.edu.br.web_Filmes_projetoFinal.model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -15,6 +16,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -41,6 +43,35 @@ public class Usuario implements Serializable,
 	
 	@Column(length = 100, nullable = false)
 	private String username;
+
+	@Column(length = 25, nullable = false)
+	private String cpfcnpj;
+
+
+	@Column(length = 25, nullable = false)
+	private String tel;
+
+	@Column(length = 25, nullable = false)
+	private String cep;
+
+	@Column(length = 25, nullable = false)
+	private String cidade;
+
+	@Column(length = 25, nullable = false)
+	private String uf;
+
+	@Column(length = 25, nullable = false)
+	private String bairro;
+
+	@Column(length = 25, nullable = false)
+	private String rua;
+
+	@Column(length = 25, nullable = false)
+	private String numero;
+
+
+	@Column(length = 150, nullable = false)
+	private String email;
 	
 	@Column(length = 1024, nullable = false)
 	private String password;

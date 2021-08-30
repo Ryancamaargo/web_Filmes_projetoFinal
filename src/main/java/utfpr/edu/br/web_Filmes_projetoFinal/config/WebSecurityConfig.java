@@ -26,16 +26,28 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		http.csrf().disable()
 			.exceptionHandling().accessDeniedPage("/403")
 			.and().formLogin().loginPage("/login")
-			.defaultSuccessUrl("/")
+			.defaultSuccessUrl("/", true)
 			.failureUrl("/login?error=bad_credentials").permitAll()
 			.and().logout()
 			.logoutSuccessUrl("/login")
 			.and().authorizeRequests()
-				.antMatchers("/genero/**").hasAnyRole("USER", "ADMIN")
-				.antMatchers("/produtora/**").hasAnyRole("USER", "ADMIN")
-				.antMatchers("/serie/**").hasRole("ADMIN")
-				.antMatchers("/cadastro/**").permitAll()
+				.antMatchers("/meucadastro/**").permitAll()
+				.antMatchers("/reset/**").permitAll()
+				.antMatchers("/cadastrarse/**").permitAll()
+				.antMatchers("/index/**").permitAll()
+				.antMatchers("/carrinho/**").permitAll()
+				.antMatchers("/item/carrinho/**").permitAll()
+				.antMatchers("/updatePassword/**").permitAll()
+				.antMatchers("/filmes/**").permitAll()
+				.antMatchers("/series/**").permitAll()
+				.antMatchers("/item/**").permitAll()
+				.antMatchers("/savePassword/**").permitAll()
+				.antMatchers("/").permitAll()
+				.antMatchers("/venda/**").authenticated()
+				.antMatchers("/sobre/**").permitAll()
 				.antMatchers("/**").authenticated();
+
+
 	}
 	
 	@Override

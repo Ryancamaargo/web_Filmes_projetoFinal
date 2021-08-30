@@ -7,8 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import utfpr.edu.br.web_Filmes_projetoFinal.model.Itens;
 import utfpr.edu.br.web_Filmes_projetoFinal.model.Usuario;
 import utfpr.edu.br.web_Filmes_projetoFinal.model.Venda;
 import utfpr.edu.br.web_Filmes_projetoFinal.service.ItensService;
@@ -16,37 +14,57 @@ import utfpr.edu.br.web_Filmes_projetoFinal.service.SecurityUserService;
 import utfpr.edu.br.web_Filmes_projetoFinal.service.VendaService;
 
 import javax.validation.Valid;
-import java.time.LocalDate;
 import java.util.Date;
 
 //
 //import javax.validation.Valid;
 
 @Controller
-@RequestMapping("item")
-public class ItemController {
+public class VendaController {
 	
-	@Autowired
-	private ItensService itensService;
+
 	@Autowired
 	private VendaService vendaService;
-
 	@Autowired
 	private SecurityUserService securityUserService;
 
-
-	@GetMapping("{id}")
-	private String form(@PathVariable("id") Long id, Model model) {
-		model.addAttribute("item", itensService.findOne(id));
-		return "Itens/itensInterno";
+	@GetMapping("venda")
+	public String venda() {
+		return "venda";
 	}
 
-	@GetMapping("carrinho")
-	public String carrinho() {
-		return "carrinho";
+	@GetMapping("vendaDoHistorico")
+	public String vendaDoHistorico() {
+		return "vendaDoHistorico";
 	}
 
+	@GetMapping("listaVenda")
+	public String listaVenda() {
+		return "listaVenda";
+	}
 
+	@PostMapping("venda")
+	public ResponseEntity<?> save(@RequestBody @Valid Venda venda,
+								  BindingResult result,
+								  Model model) {
+		try {
+			if (result.hasErrors()) {
+				return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+			}
+
+			Usuario usuario = securityUserService.getUsuarioPrincipal();
+			venda.setUsuario(usuario);
+			venda.setData(new Date());
+			venda.getVendaItens().forEach(vi -> vi.setVenda(venda));
+
+			vendaService.save(venda);
+			return new ResponseEntity<>(HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+
+		}
+	}
 
 }
 

@@ -10,43 +10,58 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <ul class="navbar-nav mr-auto mt-2 align-items-center">
-            <li class="content-logo">
-                <a class="nav-link mt-1" th:href="@{/index.html}">
-                <img th:src="@{/images/logo.png}" class="logo" alt="Logo"/></a></li>
-            <li>
-                <a th:href="@{/login}"><i class="fa fa-user my-2 my-sm-0 text-center"></i>
-                    Login/
+        <ul class="nav navbar-nav mr-auto mt-2 align-items-center">
+            <li class="nav-item content-logo">
+                <a class="nav-link mt-1" th:href="@{/}">
+                    <img th:src="@{/images/logo.png}" class="logo" alt="Logo"/></a></li>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle " id="navbarDropdownMenuLink" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Categorias
                 </a>
-            </li>
-            <li>
-                <a th:href="@{/meucadastro}"><i class="fa fa-address-card my-2 my-sm-0"></i>
-                Meu cadastro
-                </a>
-            </li>
-            <li>
-                <a th:href="@{/cadastrar_se}"><i class="fa fa-user-plus my-2 my-sm-0"></i>
-                Cadastrar-se
-                 </a>
-            </li>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
+                    <a class="dropdown-item" th:href="@{/series}">Séries</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" th:href="@{/filmes}">Filmes</a>
+                </div>
+            </li>
+            <li><a class="nav-link" th:href="@{/sobre}">Sobre</a></li>
         </ul>
+
+        <div class="navbar align-items-center w-100" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mx-auto text-md-center ">
+                <li class="nav-item">
+                        <a th:href="@{/login}"><i class="fa fa-user my-2 my-sm-0 text-center"></i>
+                                Login/
+                            </a>
+
+                        <a th:href="@{/meucadastro}"><i class="fa fa-address-card my-2 my-sm-0"></i>
+                        Meu cadastro
+                        </a>
+
+                        <a th:href="@{/cadastrarse}"><i class="fa fa-user-plus my-2 my-sm-0"></i>
+                            Cadastrar-se
+                         </a>
+                </li>
+            </ul>
+        </div>
+
         <form class="form-inline buscar">
-            <form class="form-inline">
+
 
                 <input class="form-control mr-sm-2" type="search" placeholder="Consultar..."
                        aria-label="Search">
                 <button class="btn btn-outline-info my-2 my-sm-0" type="submit"><i
                         class="fa fa-search"></i></button>
-            </form>
 
-            <form class="form-inline">
 
-                <a href="carrinho.html"><i class="fa fa-shopping-cart my-2 my-sm-0 " style="padding:10px"></i>
+
+
+                <a th:href="@{/item/carrinho}"><i class="fa fa-shopping-cart my-2 my-sm-0 " style="padding:10px"></i>
 
                 </a>
-
-            </form>
 
             <li class="form-inline nav-item text-center " style="margin-left: 25px; font-size: 15px;">
                 Bem vindo(a), <span id="nomeusuariologado">Logar-se</span>

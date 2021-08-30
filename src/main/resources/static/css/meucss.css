@@ -1,0 +1,430 @@
+.logo {
+    max-width: 50px;
+    max-height: 50px;
+    width: auto;
+    height: auto;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.imagemserie {
+    min-height: 305px;
+    min-width: 205px;
+}
+
+.imagemfilme {
+    min-height: 305px;
+    min-width: 200px;
+}
+
+.rowinterna {
+    margin-right: -15;
+    margin-left: -15;
+}
+
+#logomarca {
+    color: blue;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.marca {
+    padding: 10px;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font: 12px;
+}
+
+.body2 {
+    margin: 10px;
+}
+
+.minuatura {
+    width: 100%;
+    height: 85%;
+}
+
+.imagem-produto {
+    width: 150px;
+    height: 100px;
+    margin: 10px;
+}
+
+.nome-produto {
+    color: blue;
+    font-size: 30px;
+}
+
+.preco-produto {
+    color: black;
+    margin-left: 100px;
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.minuatura2 {
+    width: 300px;
+    height: 300px;
+}
+
+.grid {
+    display: grid;
+}
+
+.bg {
+    background-color: coral;
+}
+
+.teste {
+    color: #fff;
+    background-color: turquoise;
+    border-color: #0d6efd;
+    margin: 10px;
+    padding: 10px;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+footer p {
+    color: #FFF;
+    margin-bottom: 0;
+}
+
+.ajuste {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.ajuste img {
+    height: 300px;
+}
+
+.imagens {
+    max-width: 400;
+    max-height: 600;
+}
+
+.titulo, .img-thumbnail {
+    background-color: gold;
+    color: #fff;
+}
+
+.col-12 {
+    flex: 100%;
+}
+
+.card {
+    background-color: black;
+    margin: 5px;
+}
+
+.col-4 {
+    padding: 30px;
+}
+
+.center {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.div_rodape {
+    text-align: center;
+    color: blue;
+    padding: 5px;
+}
+
+#rodape1 {
+    display: flex;
+}
+
+.linha {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.corParagrafo {
+    color: darkgrey;
+    margin-top: 10px;
+}
+
+.coluna-25 {
+    width: 100%;
+    color: blue;
+}
+
+.btn-outline-secondary {
+    background-color: #111;
+}
+
+.card-body {
+    background-color: darkblue;
+    color: white;
+}
+
+.card-title {
+    text-align: center;
+    margin: 10px;
+}
+
+.div_rodape {
+    margin: 10px;
+}
+
+#img2 {
+    max-width: 300px;
+    max-height: 400px;
+}
+
+.img {
+    width: 50%;
+    background-image: transparent;
+}
+
+.neg {
+    font-weight: bold;
+    text-align: left;
+}
+
+.topo {
+    font-size: 30px;
+    color: red;
+    background-color: black;
+}
+
+#contador {
+    color: blue;
+}
+
+.form {
+    position: relative;
+    background: #FFFFFF;
+    max-width: 400px;
+    margin: 120px auto;
+    padding: 40px;
+}
+
+.formcadastrarse {
+    position: relative;
+    background: #FFFFFF;
+    max-width: 400px;
+    margin: 120px auto;
+    padding: 30px;
+}
+
+.taman {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.aumento {
+    max-width: 1000px;
+}
+
+.legend {
+    text-align: center;
+    color: #4CAF50;
+    font-size: 10;
+    background-color: black;
+}
+
+.form input {
+    font-family: "Roboto", sans-serif;
+    background: #f2f2f2;
+    color: black;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+   
+    font-size: 14px;
+}
+
+.form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    background: darkblue;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#formtotal input, #formtotal select {
+    background: #b5b5b5;
+    border: 1px solid blue;
+}
+
+.titulo_logins {
+    margin-top: 110px;
+    text-align: center;
+}
+
+.taman2 {
+    max-width: 400px;
+    margin-top: 100px;
+    margin-inline: auto;
+}
+
+.produto {
+    max-width: 400px;
+}
+
+.principal {
+    width: 100%;
+    height: 490px;
+}
+
+.col-sm {
+    margin-top: 120px;
+}
+
+.img {
+    width: 300px;
+    height: 300px;
+}
+
+.avaliacao {
+    text-align: justify;
+    padding: 10px;
+    margin: 10px;
+}
+
+.avaliacao2 {
+    text-align: justify;
+    color: black;
+    padding: 10px;
+}
+
+.inf {
+    margin-top: 110px;
+    background: #b5b5b5;
+    margin-left: 12, 5%;
+}
+
+.fundosecundario:hover {
+    border: 1px solid red;
+    margin: 2px;
+}
+
+.corFundoProduto {
+    background: silver;
+}
+
+.fundo {
+    background: #111;
+}
+
+.card2 {
+    background-color: teal;
+    margin: 0;
+}
+
+.estrelas input[type=radio] {
+    display: none;
+}
+
+.estrelas label i.fa {
+    font-size: 2.5em;
+}
+
+.estrelas label i.fa:before {
+    content: '\f005';
+    color: #FC0;
+}
+
+.estrelas input[type=radio]:checked~label i.fa:before {
+    color: #CCC;
+}
+
+.produtos {
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.produtos li {
+    displaY: inline-block;
+    text-align: center;
+    vertical-align: top;
+    margin: 0 1.5%;
+    padding: 30px 15px;
+    box-sizing: border-box;
+    border: 2px solid #000000;
+    border-radius: 10px;
+}
+
+.produtos li:hover {
+    border-color: blue;
+}
+
+.produtos li:active {
+    border-color: lightskyblue;
+}
+
+.produtos-titulo {
+    color: blue;
+    font-family: Impact, fantasy;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    font-size: 30px;
+}
+
+.produtos li:hover h3 {
+    font-size: 30px;
+}
+
+.produtos h3 {
+    font-size: 25px;
+}
+
+.produtos-descricao {
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', fantasy;
+}
+
+.produtos-preco {
+    font-size: 50px;
+    font-family: Marker Felt, fantasy;
+    margin-top: 10px;
+}
+
+.navteste {
+    text-transform: uppercase;
+    font-family: fantasy;
+}
+
+.tambanner {
+    max-height: 600px;
+}
+
+.transparentbanner {
+    opacity: 0.6;
+}
+
+.letrabanner {
+    color: blue;
+    max-height: 500px
+}
+
+.imagemprincipalProduto1 {
+    height: 396;
+    width: 768px;
+}
+
+label {
+    color: cornflowerblue;
+}

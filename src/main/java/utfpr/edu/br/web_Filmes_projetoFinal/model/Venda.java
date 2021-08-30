@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -28,51 +29,13 @@ public class Venda {
     @Column(name = "tipo_pagamento")
     private String tipo_pagamento;
 
+
+    @ManyToOne()
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Venda_Itens> vendaItens;
+
+
 }
-/*
-
-    @NotNull(message = "O campo valor não pode ser nulo.")
-    @Column(nullable = false)
-    private Double valor;
-*/
-
-    /*@ManyToOne
-    @JoinColumn(name = "categoria_id", referencedColumnName = "id")
-    private Categoria categoria;
-
-    @ManyToOne
-    @JoinColumn(name = "marca_id", referencedColumnName = "id")
-    private Marca marca;*/
-
-
-/*
-
-package br.edu.utfpr.trabalhoFinalWeb.model;
-
-        import lombok.*;
-
-        import javax.persistence.*;
-
-@Entity
-@Table(name="USUARIO")
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@EqualsAndHashCode(of = "idUsuario")
-public class Usuario {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_USUARIO")
-    private Long idUsuario;
-
-    @Column(name = "NOME")
-    private String nome;
-
-    @Column(name = "email")
-    private String email;
-
-    @Column(name = "senha")
-    private String senha;
-}
-*/

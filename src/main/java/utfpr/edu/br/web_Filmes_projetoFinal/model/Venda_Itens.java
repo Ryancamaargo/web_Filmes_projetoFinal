@@ -23,19 +23,14 @@ public class Venda_Itens {
     @ManyToOne
     @JoinColumn(name = "venda_id", referencedColumnName = "id")
     private Venda venda;
-
-    @ManyToOne
-    @JoinColumn(name = "item_id", referencedColumnName = "id")
-    @JoinColumn(name = "item_preco_promocao", referencedColumnName = "preco_promocao")
-    private Itens itens;
 //
 //    @NotEmpty(message = "A quantidade deve ser preenchido.")
     @Column(name = "quantidade")
-    private int quantidade;
-
-//    @NotEmpty(message = "O total produtos deve ser preenchido.")
-    @Column(name = "total_produto")
-    private Double total_produto;
+    private Integer quantidade;
+//
+////    @NotEmpty(message = "O total produtos deve ser preenchido.")
+//    @Column(name = "total_produto")
+//    private Double total_produto;
 
 
 }
