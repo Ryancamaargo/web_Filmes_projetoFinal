@@ -78,14 +78,7 @@
 
 
                     <div class="row">
-                        <div class="col">
 
-                            <label>Data de nascimento</label>
-                            <input type="date" id="dtNasc" name="datanascimento" class="form-control"
-                                   placeholder="Data de nascimento"/>
-
-
-                        </div>
 
                         <div class="col">
 
@@ -186,8 +179,8 @@
 
                 <div>
 
-                    <button type="submit" id="cadastrarse" name="cadastrarse" class="btn btn-primary">Cadastrar-se
-                    </button>
+                    <button type="submit" id="cadastrarse" name="cadastrarse" class="btn btn-primary"><i
+                            class="fa fa-floppy-o"> Cadastrar-se</i></button>
                     <p class="message">Já tem usuário? <a th:href="@{/login}">Faça o login</a></p>
                 </div>
 
@@ -195,15 +188,23 @@
 
 
         </div>
+        <!--as validações existem nas regras de negocios do carrinho vazio, usuario deslogado para finalizar venda/acessar venda, fiz o js que ESTAVA
+        funcionando uma hora, mas agora perdi o fio da meada, e já é quase 2h da manhã, vou subir o git e ir descansar hehe. desculpa-->
+        <link rel="stylesheet" th:href="@{/js/validaJS.js}"/>
+        <!--ACHEI QUE ERA SO A LETRA R, MAS NAO SEI PORQUE NAO ESTA VALIDANDO MAIS, JÁ SÃO 2H DA MANHÃ KKKKKKKKKKK, ESTOU DESDE SEGUNDA DORMINDO
+        ESSE HORARIO, Vou descansar, se eu descobrir amanhã, eu aviso o professor, obrigado!-->
+     <!--   <link rel="stylesheet" th:href="@{/js/validarJS.js}"/>// ERA SÓ A LETRA R que estava errado, por isso não consegui apresentar a validação professor, desculpa kkkk-->
+        <script type="text/javascript" th:src="@{/js/jquery.maskedinput.js}"></script>
+        <script type="text/javascript" th:src="@{/js/jquery-3.1.0.min.js}"></script>
 
+        <script src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"
+                type="text/javascript"></script>
+        <link rel="stylesheet" th:href="@{/js/cadastrarse.js}"/>
+        <link type="text/css" rel="stylesheet"  th:href="@{/js/bootstrap.js}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js" type="text/javascript"></script>
 
     </div>
-
-    <script src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js" type="text/javascript"></script>
-    <script type="text/javascript" src="@{/js/jquery.maskedinput.js}"></script>
-    <script src="@{/js/validaJS.js}"></script>
-    <script src="@{/js/jquery-3.1.0.min.js}" type="text/javascript"></script>
-    <script type="text/javascript" src="@{/js/cadastrarse.js}"></script>
 
     </body>
 

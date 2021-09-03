@@ -9,14 +9,13 @@ import org.springframework.context.annotation.Bean;
 public class WebFilmesProjetoFinalApplication {
 
 
+    public static void main(String[] args) {
+        SpringApplication.run(WebFilmesProjetoFinalApplication.class, args);
+    }
 
-	public static void main(String[] args) {
-		SpringApplication.run(WebFilmesProjetoFinalApplication.class, args);
-	}
-
-	@Bean
-	public LayoutDialect layoutDialect() {
-		return new LayoutDialect();
-	}
+    @Bean
+    public LayoutDialect layoutDialect() {
+        return new LayoutDialect();
+    }
 
 }

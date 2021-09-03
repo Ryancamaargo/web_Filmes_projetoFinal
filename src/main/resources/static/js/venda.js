@@ -4,6 +4,9 @@ let precoss = 0;
 let subtotal = 0;
 var vendaSt;
 
+//muita coisa não é utilizada nos .js, peço que desculpe a bagunça, mas foquei mais no trabalho restante, espero estar bom hehe
+
+
 $(function () {
 
     let items = getArrayStorage();
@@ -237,12 +240,6 @@ function totalresumo2() {
 }
 
 
-//function addQtd() {
- //   let precoss = Number($(liProduto).children('.preco-produto').text());
- //   subtotal += precoss;
-  //  $('#total').text(subtotal);
-//}
-
 function getProduto(element) {
     let produto = {
         titulo: element.querySelector('.nome-produto').textContent,
@@ -267,15 +264,6 @@ function novoBotao(elemento, classe) {
 
     return componente;
 }
-
-// function addProdutoArray() {
-//     let produtos = [];
-//     lista.querySelectorAll('.list-group-item').forEach((itensArray, index) => {
-//         produtos.push(getProduto(itensArray));
-//     })
-//     console.log("Produtos: ", produtos);
-//     setArrayStorage(produtos);
-// }
 
 
 
@@ -333,14 +321,14 @@ function terminaVendaPedido() {
 
     itens.forEach((item,i) => {
             venda.vendaItens[i] = new Object();
-            venda.vendaItens[i].item = new Object();
-            venda.vendaItens[i].item.idItem = item.idItem;
+            venda.vendaItens[i].itens = new Object();
+            venda.vendaItens[i].itens.id = item.idItem;
             venda.vendaItens[i].quantidade = item.qtd;
         })
 
         venda.tipo_pagamento = vendaSt.formaPagamento;
-        // pedido.formaEnvio = pedidoStorage.formaEnvio;
-        // pedido.numeroParcelas = pedidoStorage.numeroParcelas;
+        venda.formaEnvio = vendaSt.formaEnvio;
+        venda.numeroParcelas = vendaSt.numeroParcelas;
 
         $.ajax({
             type: 'post',
@@ -349,13 +337,12 @@ function terminaVendaPedido() {
             data : JSON.stringify(venda),
             success: function() {
                 Swal.fire({
-                    title: 'Salvo!',
-                    text: 'Registro salvo com sucesso!',
+                    title: 'Compra realizada!!',
+                    text: 'Boas compras!!',
                     type: 'success'
                 }).then((result) => {
-                        setArrayStorage('itensCarrinho',  new Array());
                         localStorage.removeItem("venda") ;
-                        window.location = 'vendas';
+                        window.location = 'listaVenda';
                     }
                 );//FIM swal()
 

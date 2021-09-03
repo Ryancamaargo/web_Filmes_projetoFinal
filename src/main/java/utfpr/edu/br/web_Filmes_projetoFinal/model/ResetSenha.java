@@ -16,7 +16,7 @@ import static java.time.LocalDate.now;
 @NoArgsConstructor
 @Data
 @EqualsAndHashCode(of = "id")
-public class PasswordResetToken implements Serializable {
+public class ResetSenha implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,11 +28,9 @@ public class PasswordResetToken implements Serializable {
     @JoinColumn(nullable = false, name = "id")
     private Usuario usuario;
 
-    private LocalDate expiryDate;
 
-    public PasswordResetToken(String token, Usuario usuario) {
+    public ResetSenha(String token, Usuario usuario) {
         this.token = token;
         this.usuario = usuario;
-        this.expiryDate = LocalDate.now().plusDays(1);
     }
 }

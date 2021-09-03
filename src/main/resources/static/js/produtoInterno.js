@@ -12,7 +12,7 @@ btAdicionar.addEventListener('click', function (e) {
 
 function setArrayStorage(arr) {
     localStorage.setItem('listaProdutos', JSON.stringify(arr))|| [];
-    //Storage.length('listaProdutos');
+
 }
 
 function getArrayStorage() {
@@ -22,7 +22,7 @@ function getArrayStorage() {
 function setProduto() {
 
     let produto = novoProduto();
-    // let prod = [];
+
     // prod.push(produto);
 
     arrayCarrinho = getArrayStorage();

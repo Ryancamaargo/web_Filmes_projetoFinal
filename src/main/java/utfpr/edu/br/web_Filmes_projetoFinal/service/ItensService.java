@@ -7,4 +7,4 @@ import utfpr.edu.br.web_Filmes_projetoFinal.repository.ItensRepository;
 import utfpr.edu.br.web_Filmes_projetoFinal.service.impl.CrudServiceImpl;
 
 public interface ItensService extends CrudService<Itens, Long> {
-        }
+}

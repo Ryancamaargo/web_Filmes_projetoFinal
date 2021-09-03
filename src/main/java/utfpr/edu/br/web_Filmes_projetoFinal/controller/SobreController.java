@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class SobreController {
 
-	@GetMapping("sobre")
-	public String sobre() {
-		return "sobre";
-	}
+    @GetMapping("sobre")
+    public String sobre() {
+        return "sobre";
+    }
 }

@@ -1,53 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Login Ryanflix</title>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Login Ryanflix</title>
 
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	crossorigin="anonymous">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
-	integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
-	crossorigin="anonymous">
-<link rel="stylesheet"
-	href="https://unpkg.com/shards-ui@latest/dist/css/shards.min.css">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://unpkg.com/shards-ui@latest/dist/css/shards.min.css">
 
-	<link rel="stylesheet" th:href="@{/css/login.css}" />
+    <link rel="stylesheet" th:href="@{/css/login.css}"/>
 </head>
 
 <body>
-	<div class="wrapper fadeInDown">
-		<div id="formContent">
-			<div class="fadeIn first">
-				<img alt="RyanFlix" th:src="@{/images/logo.png}"/>
-			</div>
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+<link rel="stylesheet" th:href="@{/css/meucss.css}"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <div class="fadeIn first">
+            <img alt="RyanFlix" th:src="@{/images/logo.png}"/>
+        </div>
 
-					<form th:id="reset" th:action="@{/reset}" method="POST">
-						<label for="email">Informe o e-mail</label>
-						<input type="email" id="email" class="fadeIn second" name="email" placeholder="email">
-						<button onclick="resetPass()"
-						>Enviar</button>
-					</form>
-
-
-			<div id="formFooter">
-				<a class="underlineHover" href="#">Esqueceu a senha?</a>
-			</div>
-
-		</div>
-	</div>
+        <form th:id="reset" th:action="@{/reset}" method="POST">
+            <i class="fa fa-envelope-o"></i>
+            <p for="email">Informe o E-mail</p>
+            <input type="email" id="email" class="fadeIn second" name="email" placeholder="E-mail @">
+            <button class="btn btn-success" onclick="resetPass()" >Enviar</button>
+        </form>
 
 
-	<link rel="stylesheet" th:href="@{/css/produtos.css}"/>
+        <div id="formFooter">
+            <a th:href="@{/cadastrarse}"><i class="underlineHover fa fa-user-plus my-2 my-sm-0"></i>
+                Deseja se cadastrar?
+            </a>
+        </div>
 
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<script type="text/javascript" th:src="@{/js/senha.js}"></script>
+    </div>
+</div>
+
+
+<link rel="stylesheet" th:href="@{/css/produtos.css}"/>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" th:src="@{/js/senha.js}"></script>
 </body>
 </html>

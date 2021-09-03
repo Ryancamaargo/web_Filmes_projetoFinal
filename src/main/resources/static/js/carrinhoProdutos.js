@@ -150,14 +150,25 @@ function novoLi(produto) {
     liProduto.querySelector('.adicionar').addEventListener('click', (e) => {
         inputQtd.textContent = parseInt(inputQtd.textContent) + 1;
         totalLabel.textContent = somar(parseFloat(produto.preco), parseFloat(totalLabel.textContent));
+
+
+        arrayCarrinho = getArrayStorage();
+        const posicao = arrayCarrinho.findIndex(item => item.idItem == produto.idItem)
+        if (posicao !== -1) {
+            arrayCarrinho[posicao].qtd ++;
+            setArrayStorage(arrayCarrinho);
+        }
     })
 
     liProduto.querySelector('.subtrair').addEventListener('click', (e) => {
         inputQtd.textContent = parseInt(inputQtd.textContent) - 1;
-
-
-
         totalLabel.textContent = subtrair(parseFloat(totalLabel.textContent), parseFloat(produto.preco));
+        arrayCarrinho = getArrayStorage();
+        const posicao = arrayCarrinho.findIndex(item => item.idItem == produto.idItem)
+        if (posicao !== -1) {
+            arrayCarrinho[posicao].qtd --;
+            setArrayStorage(arrayCarrinho);
+        }
 
     })
 

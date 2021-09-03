@@ -10,7 +10,7 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@Table(name="venda_Itens")
+@Table(name = "venda_Itens")
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = {"id"})
@@ -23,61 +23,17 @@ public class Venda_Itens {
     @ManyToOne
     @JoinColumn(name = "venda_id", referencedColumnName = "id")
     private Venda venda;
-//
-//    @NotEmpty(message = "A quantidade deve ser preenchido.")
-    @Column(name = "quantidade")
-    private Integer quantidade;
-//
-////    @NotEmpty(message = "O total produtos deve ser preenchido.")
-//    @Column(name = "total_produto")
-//    private Double total_produto;
-
-
-}
-/*
-
-    @NotNull(message = "O campo valor não pode ser nulo.")
-    @Column(nullable = false)
-    private Double valor;
-*/
-
-    /*@ManyToOne
-    @JoinColumn(name = "categoria_id", referencedColumnName = "id")
-    private Categoria categoria;
 
     @ManyToOne
-    @JoinColumn(name = "marca_id", referencedColumnName = "id")
-    private Marca marca;*/
+    @JoinColumn(name = "itens_id", referencedColumnName = "id")
+    private Itens itens;
 
 
-/*
+    @Column(name = "quantidade")
+    private Integer quantidade;
 
-package br.edu.utfpr.trabalhoFinalWeb.model;
 
-        import lombok.*;
 
-        import javax.persistence.*;
 
-@Entity
-@Table(name="USUARIO")
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@EqualsAndHashCode(of = "idUsuario")
-public class Usuario {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_USUARIO")
-    private Long idUsuario;
-
-    @Column(name = "NOME")
-    private String nome;
-
-    @Column(name = "email")
-    private String email;
-
-    @Column(name = "senha")
-    private String senha;
 }
-*/

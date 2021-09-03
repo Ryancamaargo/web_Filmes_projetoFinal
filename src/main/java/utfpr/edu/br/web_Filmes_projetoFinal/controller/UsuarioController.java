@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import utfpr.edu.br.web_Filmes_projetoFinal.model.Usuario;
@@ -36,6 +35,10 @@ public class UsuarioController {
     @Autowired
     private JavaMailSender mailSender;
 
+    @GetMapping("cadastrarse")
+    public String cadastrarSe() {
+        return "cadastrarse";
+    }
 
     @PostMapping("cadastrarse")
     private String save(@Valid Usuario usuario, BindingResult result,
@@ -44,17 +47,22 @@ public class UsuarioController {
         if (result.hasErrors()) {
             model.addAttribute("usuario", usuario);
             return "cadastrarse";
+        }else {
+            usuarioService.save(usuario);
+            attributes.addFlashAttribute("sucesso",
+                    "Registro salvo com sucesso!");
+            return "redirect:/login";
         }
+    }
 
-        usuarioService.save(usuario);
-        attributes.addFlashAttribute("sucesso",
-                "Registro salvo com sucesso!");
-        return "redirect:/login";
+    @GetMapping("reset")
+    private String reset() {
+        return "reset";
     }
 
     @PostMapping("reset")
     public GenericResponse resetPassword(HttpServletRequest request,
-                                           @RequestParam("email") String email) {
+                                         @RequestParam("email") String email) {
 
         Usuario usuario = (Usuario) usuarioServiceImpl.loadUserByEmail(email);
         if (usuario == null) {
@@ -66,9 +74,15 @@ public class UsuarioController {
         return new GenericResponse("reset password");
     }
 
-    @PostMapping("savePassword")
-    public String savePassword(final Locale locale, PasswordDto passwordDto) {
 
+    @GetMapping("alterarSenha")
+    public String alterarSenha() {
+        return "alterarSenha";
+    }
+
+    @PostMapping("salvarSenha")
+    public String salvarSenha(final Locale locale, PasswordDto passwordDto) {
+        /*essa parte de token, pesquisei e achei esse link: https://www.baeldung.com/spring-security-registration-i-forgot-my-password*/
         String result = securityUserService.validatePasswordResetToken(passwordDto.getToken());
 
         if (result != null) {
@@ -84,36 +98,10 @@ public class UsuarioController {
         }
     }
 
-    @GetMapping("reset")
-    private String reset() {
-        return "reset";
-    }
-
-
-    @GetMapping("changePassword")
-    public String showChangePasswordPage(Locale locale, Model model,
-                                         @RequestParam("token") String token) {
-        String result = securityUserService.validatePasswordResetToken(token);
-        if (result != null) {
-            return "redirect:/login";
-        } else {
-            model.addAttribute("token", token);
-            return "redirect:/updatePassword";
-        }
-    }
-
-    @GetMapping("updatePassword")
-    public String updatePassword() {
-        return "updatePassword";
-    }
-
     @GetMapping("meucadastro")
     public String meuCadastro() {
         return "meucadastro";
-    }
+    }//não fiz a parte de buscar os dados do usuario pois o tempo está corrido... embora não peça no trabalho, é bom justificar!
 
-    @GetMapping("cadastrarse")
-    public String cadastrarSe() {
-        return "cadastrarse";
-    }
+
 }

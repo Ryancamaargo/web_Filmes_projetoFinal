@@ -20,13 +20,15 @@ public class VendaServiceImpl extends CrudServiceImpl<Venda, Long> implements Ve
     protected JpaRepository<Venda, Long> getRepository() {
         return vendaRepository;
     }
+
     @Override
     public Venda save(Venda entity) {
         return super.save(entity);
     }
 
-//    @Override
-//    public List<Venda> findAllByUsuarioId(Long id) {
-//        return vendaRepository.findAllByUsuarioId(id);
-//    }
+    @Override
+    public Venda findOne(Long id) {
+        return super.findOne(id);
+    }
+
 }

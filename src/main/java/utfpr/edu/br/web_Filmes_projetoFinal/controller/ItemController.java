@@ -19,33 +19,25 @@ import javax.validation.Valid;
 import java.time.LocalDate;
 import java.util.Date;
 
-//
-//import javax.validation.Valid;
 
 @Controller
 @RequestMapping("item")
 public class ItemController {
-	
-	@Autowired
-	private ItensService itensService;
-	@Autowired
-	private VendaService vendaService;
 
-	@Autowired
-	private SecurityUserService securityUserService;
+    @Autowired
+    private ItensService itensService;
 
 
-	@GetMapping("{id}")
-	private String form(@PathVariable("id") Long id, Model model) {
-		model.addAttribute("item", itensService.findOne(id));
-		return "Itens/itensInterno";
-	}
+    @GetMapping("{id}")
+    private String form(@PathVariable("id") Long id, Model model) {
+        model.addAttribute("item", itensService.findOne(id));
+        return "Itens/itensInterno";
+    }
 
-	@GetMapping("carrinho")
-	public String carrinho() {
-		return "carrinho";
-	}
-
+    @GetMapping("carrinho")
+    public String carrinho() {
+        return "carrinho";
+    }
 
 
 }

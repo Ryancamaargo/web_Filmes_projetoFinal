@@ -7,146 +7,153 @@
 
 
 <section layout:fragment="conteudo">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
 
-<div class="container-fluid">
-    <div class="form aumento login bloquear_campos">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <div class="container-fluid">
+        <div class="form aumento login bloquear_campos">
 
 
-        <ul id="mensagemErro">
-        </ul>
+            <ul id="mensagemErro">
+            </ul>
 
 
-        <form id="form-dados" method="post">
-            <h2 style="text-align: center; color:blue; "><strong>Meus dados</strong></h2>
-            <div class="pessoal">
+            <form id="form-dados" method="post">
+                <h2 style="text-align: center; color:blue; "><strong>Meus dados</strong></h2>
+                <div class="pessoal">
 
+                    <legend style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                        <h2><b>Dados pessoais</b></h2>
+                    </legend>
+                    <div class="row">
+                        <div class="col">
+
+                            <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome" disabled/>
+                        </div>
+
+                        <div class="col">
+
+                            <input id="cpf" type="text" name="cpf" class="form-control" disabled
+                                   placeholder="CPF (EX: 00.000.000-00)"/>
+
+                        </div>
+
+                        <div class="col">
+
+
+                            <input class="form-control" type="text" id="username" name="username"
+                                   placeholder="Username"/>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col">
+
+
+                            <input class="form-control" type="text" id="tel" name="tel"
+                                   placeholder="Telefone, ex: (99)9999-9999"
+                                   disabled/>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
                 <legend style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-                    <h2><b>Dados pessoais</b></h2>
+                    <h2><b>Endereço</b></h2>
                 </legend>
-                <div class="row">
-                    <div class="col">
+                <div class="endereco">
+                    <div class="row">
+                        <div class="col">
 
-                        <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome" disabled />
-                    </div>
+                            <input class="form-control" id="cep" name="cep" type="text" placeholder="Cep" disabled/>
 
-                    <div class="col">
+                        </div>
 
-                        <input id="cpf" type="text" name="cpf" class="form-control" disabled
-                               placeholder="CPF (EX: 00.000.000-00)" />
+                        <div class="col">
 
-                    </div>
+                            <input class="form-control" id="cidade" name="cidade" type="text" placeholder="Cidade"
+                                   disabled/>
+                        </div>
 
-                    <div class="col">
+                        <div class="col">
 
-
-                        <input class="form-control" type="text" id="username" name="username"
-                               placeholder="Username"/>
-                    </div>
-
-                </div>
-
-
-                <div class="row">
-
-                    <div class="col">
-
-
-                        <input class="form-control" type="text" id="tel" name="tel" placeholder="Telefone, ex: (99)9999-9999"
-                               disabled />
-                    </div>
-
-
-                </div>
-
-
-
-            </div>
-            <legend style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-                <h2><b>Endereço</b></h2>
-            </legend>
-            <div class="endereco">
-                <div class="row">
-                    <div class="col">
-
-                        <input class="form-control" id="cep" name="cep" type="text" placeholder="Cep" disabled />
-
-                    </div>
-
-                    <div class="col">
-
-                        <input class="form-control" id="cidade" name="cidade" type="text" placeholder="Cidade" disabled />
-                    </div>
-
-                    <div class="col">
-
-                        <select class="form-control" id="uf" placeholder="Uf" style="height
+                            <select class="form-control" id="uf" placeholder="Uf" style="height
                                 : 51px" disabled>
 
-                            <option value="1">PR</option>
-                            <option value="2">SP</option>
-                            <option value="2">SC</option>
+                                <option value="1">PR</option>
+                                <option value="2">SP</option>
+                                <option value="2">SC</option>
 
-                        </select>
+                            </select>
 
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-
-                        <input class="form-control" id="bairro" name="bairro" type="text" placeholder="Bairro" disabled />
-
-                    </div>
-
-                    <div class="col">
-
-                        <input class="form-control" id="rua" name="rua" type="text" placeholder="Rua" disabled />
-                    </div>
-
-                    <div class="col">
-
-                        <input class="form-control" id="numero" name="numero" type="text" placeholder="Numero" disabled />
-
-                    </div>
-                </div>
-
-            </div>
-
-
-
-            <div>
-                <legend style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-                    <h2><b>Login</b></h2>
-                </legend>
-                <div class="row">
-                    <div class="col">
-
-                        <div class="login">
-
-                            <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control" placeholder="Ryan@email.com" disabled>
                         </div>
                     </div>
 
+                    <div class="row">
+                        <div class="col">
+
+                            <input class="form-control" id="bairro" name="bairro" type="text" placeholder="Bairro"
+                                   disabled/>
+
+                        </div>
+
+                        <div class="col">
+
+                            <input class="form-control" id="rua" name="rua" type="text" placeholder="Rua" disabled/>
+                        </div>
+
+                        <div class="col">
+
+                            <input class="form-control" id="numero" name="numero" type="text" placeholder="Numero"
+                                   disabled/>
+
+                        </div>
+                    </div>
 
                 </div>
 
 
                 <div>
+                    <legend style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                        <h2><b>Login</b></h2>
+                    </legend>
+                    <div class="row">
+                        <div class="col">
 
-                    <a th:href="@{/}" class="btn btn-primary">Voltar para as compras <i class="fa fa-cart-plus"></i></a>
+                            <div class="login">
+
+                                <label for="email">Email</label>
+                                <input type="email" id="email" class="form-control" placeholder="Ryan@email.com"
+                                       disabled>
+                            </div>
+                        </div>
 
 
+                    </div>
+
+
+                    <div>
+
+                        <a th:href="@{/}" class="btn btn-primary">Voltar para as compras <i class="fa fa-cart-plus"></i></a>
+
+
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
+
+
+        </div>
 
 
     </div>
-
-
-
-</div>
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -162,7 +169,7 @@
     <script src="js/validaJS.js"></script>
 
 
-<script src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js" type="text/javascript"></script>
+    <script src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js" type="text/javascript"></script>
 </section>
 </body>
 </html>

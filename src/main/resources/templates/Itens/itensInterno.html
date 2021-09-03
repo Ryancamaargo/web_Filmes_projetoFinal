@@ -9,6 +9,9 @@
 <head>
 </head>
 <body>
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<section layout:fragment="conteudo">
 		<div class="row " style="margin-top: 100px;">
 
@@ -22,13 +25,13 @@
 				</div>
 
 				<div class="col-3 " style="color: white; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
-					<h1 class="text-center produtos-titulo" th:text="${item.nome}"></h1>
+					 <h1 class="text-center produtos-titulo" th:text="${item.nome}"></h1> <h1 class="text-center produtos-titulo" th:id="idItem" th:text="${item.id}">  Cód. - </h1>
 
 					<span class="col-3" style="text-justify: auto;" th:text="${item.descricao}"></span>
 
 
 						<div class="card">
-							<li><label th:id="idItem" th:text="${item.id}"></label></li>
+
 
 							<li class="list-group-item">
 								<i class="fa fa-smile-o"> <b style="color: black">Avaliações: </b></i>
@@ -96,7 +99,7 @@
 
 						</li>
 						<li class="list-group-item">   Quantidade: <input type="number" style="width: 60px; margin-right:30px" id="qtd"
-																		  min="0" onclick="calcular1();"><button type="button" class="btn btn-dark" data-toggle="modal"
+																		  min="1" value="1" onclick="calcular1();"><button type="button" class="btn btn-dark" data-toggle="modal"
 																											   data-target="#meuModal"><i
 								class="fa fa-credit-card"> Ver parcelas</i></button>
 
@@ -111,7 +114,7 @@
 					</ul>
 					<textarea id="resumo" rows="3" disabled>Log de compras: </textarea>
 					<button type="button" id = "btAdicionar" class="btn btn-success"
-							onclick="gravarFormaPagamento(); gravarFrete(); gravarTotalProduto(); gravarTotalCompra();  gravarParcelas(); finalizacao();">Adicionar/Atualizar no carrinho</button>
+							onclick="gravarFormaPagamento(); gravarFrete(); gravarTotalProduto(); gravarTotalCompra();  gravarParcelas();">Adicionar/Atualizar no carrinho</button>
 				</div>
 
 			</div>

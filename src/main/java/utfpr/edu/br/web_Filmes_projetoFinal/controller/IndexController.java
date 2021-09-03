@@ -12,33 +12,28 @@ import utfpr.edu.br.web_Filmes_projetoFinal.service.ItensService;
 @Controller
 public class IndexController {
 
-	@Autowired
-	private ItensService itemService;
-	@Autowired
-	private ItensRepository itemRepository;
-	@GetMapping("")
-	public String index(Model model) {
-		model.addAttribute("itens", itemService.findAll());
-		return "index";
-	}
+    @Autowired
+    private ItensService itemService;
+    @Autowired
+    private ItensRepository itemRepository;
 
-	@GetMapping("/filmes")
-	public String filmes(Model model) {
-		model.addAttribute("itens", itemRepository.findByCategoriaNome("filmes"));
-		return "index";
-	}
+    @GetMapping("")
+    public String index(Model model) {
+        model.addAttribute("itens", itemService.findAll());
+        return "index";
+    }
 
-	@GetMapping("/series")
-	public String series(Model model) {
-		model.addAttribute("itens", itemRepository.findByCategoriaNome("series"));
-		return "index";
-	}
+    @GetMapping("/filmes")
+    public String filmes(Model model) {
+        model.addAttribute("itens", itemRepository.findByCategoriaNome("filmes"));
+        return "index";
+    }
 
-	@GetMapping(value = {"teste", "teste2"})
-	public String teste() {
-		return "login";
-	}
-
+    @GetMapping("/series")
+    public String series(Model model) {
+        model.addAttribute("itens", itemRepository.findByCategoriaNome("series"));
+        return "index";
+    }
 
 
 }
